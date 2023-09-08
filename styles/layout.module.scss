@@ -1,0 +1,20 @@
+@import './palette.scss';
+
+.Layout {
+    width: 375px;
+    height: 100vh;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.nav {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 375px;
+    height: 72px;
+    background-color: $gray100;
+    border: 1px solid $gray300;
+    border-radius: 12px 12px 0 0;
+}
