@@ -5,6 +5,8 @@
     height: 100vh;
     margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 16px 0 72px;
+    box-sizing: border-box;
 }
 .nav {
     position: fixed;
@@ -17,4 +19,27 @@
     background-color: $gray100;
     border: 1px solid $gray300;
     border-radius: 12px 12px 0 0;
+}
+#searchForm {
+    position: relative;
+    width: calc(100% - 32px);
+    height: 46px;
+    margin: 0 16px;
+    padding: calc((46px - 23px) / 2);
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px;
+
+    & label {
+        position: absolute;
+        font-size: 20px;
+        color: $primary;
+    }
+    & input[type='text'] {
+        position: absolute;
+        left: 35px;
+        top: 15px;
+        border: none;
+        margin: auto 0;
+    }
 }

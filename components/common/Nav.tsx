@@ -14,8 +14,10 @@ import { useRouter } from 'next/router';
 
 const Nav = () => {
     const router = useRouter();
+    const pathname = router.pathname.slice(1);
 
     const menuImage = [home, map, group, mypage];
+    const menuFillImage = [homeFill, mapFill, groupFill, mypageFill];
     const menuName = ['', 'map', 'group', 'mypage'];
 
     return (
@@ -23,8 +25,12 @@ const Nav = () => {
             {menuImage.map((item) => (
                 <Link key={`${menuImage.indexOf(item)}`} href={`/${menuName[menuImage.indexOf(item)].toString()}`}>
                     <Image
-                        src={router.pathname === `/${item}` ? `${item}Fill` : item}
-                        alt={`${item}`}
+                        src={
+                            pathname === `${menuName[menuImage.indexOf(item)].toString()}`
+                                ? menuFillImage[menuImage.indexOf(item)]
+                                : item
+                        }
+                        alt={`${menuName[menuImage.indexOf(item)].toString()}`}
                         width={28}
                         height={28}
                     />
